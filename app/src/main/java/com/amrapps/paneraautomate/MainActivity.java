@@ -1,5 +1,6 @@
 package com.amrapps.paneraautomate;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -104,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         if (prefs.getBoolean("firstRun", true)) {
-            //Intent myIntent = new Intent(this, firstRun.class);
-            //startActivity(myIntent);
+            Intent myIntent = new Intent(this, firstRun.class);
+            startActivity(myIntent);
 
             prefs.edit().putBoolean("firstRun", false).commit();
 
