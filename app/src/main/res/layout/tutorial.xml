@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:text="Welcome to Panera Automate."
+        android:textColor="#000"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="    This app makes you generates free Panera accounts on demand to get you free food."
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    Let's start off by asking you for some details we're going to use for the Panera receipt. "
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_toLeftOf="@+id/name"
+            android:layout_weight="1"
+            android:text="Name: " />
+
+        <EditText
+            android:id="@+id/name"
+            android:inputType="textCapSentences"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_toLeftOf="@+id/name"
+            android:layout_weight="1"
+            android:text="Last Name: " />
+
+        <EditText
+            android:inputType="textCapSentences"
+            android:id="@+id/lastName"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="#000"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/name"
+            android:layout_weight="1"
+            android:text="Desired Password: " />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show password"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default name is: Johnny Appleseed"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/defaultPass"/>
+        <TextView
+            android:id="@+id/defaultPass"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default password is: Asdf123"/>
+        <Button
+            android:id="@+id/Continue"
+            android:onClick="continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>
