@@ -9,4 +9,10 @@
         android:title="Settings"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/bakery"
+        android:orderInCategory="100"
+        android:title="Bakery Menu"
+        app:showAsAction="never"/>
+
 </menu>

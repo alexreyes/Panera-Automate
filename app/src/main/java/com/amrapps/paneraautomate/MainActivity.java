@@ -30,22 +30,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        prefs = getSharedPreferences("com.amrapps.foodapp", MODE_PRIVATE);
+        prefs = getSharedPreferences("com.amrapps.paneraautomate", MODE_PRIVATE);
 
         name = prefs.getString("name", "");
         lastName = prefs.getString("lastName", "");
         password = prefs.getString("password", "");
 
         // Check for null values and set default if empty
-        if (name == "") {
+        if (name.equals("")) {
             name = "Johnny";
         }
 
-        if (lastName == "") {
+        if (lastName.equals("")) {
             lastName = "Appleseed";
         }
 
-        if (password == "") {
+        if (password.equals("")) {
             password = "Asdf123";
         }
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = webview.getSettings();
 
         Random random = new Random();
-        int emailNum = random.nextInt(550) + 1;
+        int emailNum = random.nextInt(55000) + 200;
         final String email = name.charAt(0) + lastName + emailNum + "@gmail.com";
 
         webview.loadUrl("https://www.panerabread.com/en-us/mypanera/registration-page.html");
@@ -103,18 +103,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-
-        if (prefs.getBoolean("firstRun", true)) {
-            Intent myIntent = new Intent(this, firstRun.class);
-            startActivity(myIntent);
-
-            prefs.edit().putBoolean("firstRun", false).commit();
-
-        }
-    }
-    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             switch (keyCode) {
@@ -146,8 +134,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
+            case R.id.bakery:
+                webview.loadUrl("https://delivery1.panerabread.com/#!/menu/category/30");
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (prefs.getBoolean("firstrun", true)) {
+            Intent intent = new Intent(this, firstRun.class);
+            startActivity(intent);
+            prefs.edit().putBoolean("firstrun", false).commit();
         }
     }
 }

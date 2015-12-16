@@ -17,8 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".firstRun"></activity>
-        <activity android:name=".settings"></activity>
+        <activity android:name=".firstRun"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".settings"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 
