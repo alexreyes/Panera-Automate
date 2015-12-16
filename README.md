@@ -1,4 +1,4 @@
-# Free-Panera-App
+# Panera Automate App
 
 This is an app that makes Panera accounts on demand in order to take advantage of the free bakery treats rewarded to you when making an account online.
 
